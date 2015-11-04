@@ -19,19 +19,6 @@ Pod::Spec.new do |s|
   s.libraries      = 'iconv', 'z', 'c++', 'sqlite3'
   s.frameworks     = 'Security', 'SystemConfiguration', 'CoreGraphics', 'CoreTelephony'
 
-  s.default_subspec = 'Basic'
-
-  s.subspec "64bit" do |tc_64|
-    tc_64.vendored_frameworks = '64Bit/TencentOpenAPI.framework'
-    tc_64.source_files = '64Bit/TencentOpenAPI.framework/Headers/**/*.h'
-    tc_64.resource_bundles    = {
-      'TencentOpenAPI' => ['64Bit/TencentOpenApi_IOS_Bundle.bundle']
-    }
-  end
-
-  s.subspec "Basic" do |bs|
-    bs.vendored_frameworks = 'Basic/TencentOpenAPI.framework'
-    bs.source_files = 'Basic/TencentOpenAPI.framework/Headers/**/*.h'
-  end
-
+  s.vendored_frameworks = 'Basic/TencentOpenAPI.framework'
+  
 end
